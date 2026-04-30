@@ -7,6 +7,7 @@ import pickle
 
 # Load dataset
 df = pd.read_csv("data/reviews.txt")
+df = pd.read_csv("/Users/mrithika/Movie Sentinent Analysis/project/data/reviews.txt")
 df = df.dropna()
 
 # Features + labels

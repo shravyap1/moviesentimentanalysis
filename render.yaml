@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: vibecheck-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn api:app
+    
