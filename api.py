@@ -3,6 +3,10 @@ from flask_cors import CORS
 import pickle
 import json
 import re
+import os 
+
+PORT = int(os.environ.get("PORT", 10000))
+OMDB_API_KEY = os.environ.get("OMDB_API_KEY", "1b9c657d")
 
 app = Flask(__name__)
 CORS(app)  # allows Lovable to call this
@@ -69,4 +73,4 @@ def health():
     return jsonify({"status": "ok"})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=PORT, debug=False)
