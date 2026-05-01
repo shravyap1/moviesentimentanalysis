@@ -5,6 +5,7 @@ from src.models import train_logistic, train_nb, train_svm
 from src.evaluation import evaluate
 from sklearn.model_selection import train_test_split
 import pickle
+from src.visualization import plot_confusion_matrix
 
 # Load dataset
 df = pd.read_csv("data/reviews.txt")
@@ -36,5 +37,7 @@ with open("model.pkl", "wb") as f:
     pickle.dump(model, f)
 with open("vectorizer.pkl", "wb") as f:
     pickle.dump(vectorizer, f)
+
+plot_confusion_matrix(model, X_test, y_test)
    
 print("✅ model.pkl and vectorizer.pkl saved!")

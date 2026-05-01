@@ -6,4 +6,3 @@ def evaluate(model, X_test, y_test):
     print("Accuracy:", accuracy_score(y_test, y_pred))
     print("\nReport:\n", classification_report(y_test, y_pred))
     
-    return y_pred
